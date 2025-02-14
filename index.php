@@ -64,6 +64,8 @@
             background-color: #f2f2f2;
         }
     </style>
+    <!-- Add the SheetJS (xlsx.js) library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -72,6 +74,9 @@
         <!-- Input Search dan Button Search -->
         <input type="text" id="searchInput" placeholder="Cari Plat Nomor Kendaraan...">
         <button id="searchButton" onclick="searchData()">Search</button>
+
+        <!-- Export to Excel Button -->
+        <button id="exportButton" onclick="exportToExcel()">Export to Excel</button>
         
         <!-- Tabel Data -->
         <table id="dataTable">
@@ -117,7 +122,6 @@
             });
         }
 
-
         // Fungsi untuk mencari data berdasarkan plat nomor
         function searchData() {
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -129,6 +133,13 @@
                     displayData(data); // Menampilkan data ke tabel
                 })
                 .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fungsi untuk mengekspor data ke Excel
+        function exportToExcel() {
+            const table = document.getElementById("dataTable");
+            const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet 1" });
+            XLSX.writeFile(wb, "Data_Transaksi_Membership.xlsx");
         }
 
         // Tampilkan data awal saat halaman dimuat (opsional jika Anda ingin menampilkan semua data tanpa filter pada awal)

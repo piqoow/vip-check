@@ -69,7 +69,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Data Transaksi Membership</h1>
+        <h1>Data Transaksi Membership CP</h1>
         
         <!-- Input Search dan Button Search -->
         <input type="text" id="searchInput" placeholder="Cari Plat Nomor Kendaraan...">
@@ -79,7 +79,7 @@
         <button id="exportButton" onclick="exportToExcel()">Export to Excel</button>
         
         <!-- CP DATA -->
-        <button id="indexButton" onclick="window.location.href='indexipm.php'">DATA IPM</button>
+        <button id="indexButton" onclick="window.location.href='indexipm.php'">GO TO DATA IPM</button>
 
         <!-- Tabel Data -->
         <table id="dataTable">

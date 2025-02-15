@@ -79,8 +79,8 @@
         <button id="exportButton" onclick="exportToExcel()">Export to Excel</button>
         
         <!-- CP DATA -->
-        <button id="indexButton" onclick="window.location.href='indexipm.php'">DATA IPM</button>
-
+        <button id="indexButton" onclick="window.location.href='index.php'">DATA CP</button>
+        
         <!-- Tabel Data -->
         <table id="dataTable">
         <thead>
@@ -158,7 +158,7 @@
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
             // Mengambil data dari server hanya saat tombol "Search" diklik
-            fetch('get_data.php?plateNumber=' + encodeURIComponent(searchInput))
+            fetch('get_data_ipm.php?plateNumber=' + encodeURIComponent(searchInput))
                 .then(response => response.json())
                 .then(data => {
                     displayData(data); // Menampilkan data ke tabel

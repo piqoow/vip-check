@@ -4,12 +4,12 @@ header('Content-Type: application/json');
 $servername_1 = "110.0.100.70";
 $username_1 = "root";
 $password_1 = "P@ssw0rdKu!23";
-$dbname_1 = "centrepark_datawarehouse";
+$dbname_1 = "ipm_datawarehouse";
 
 $servername_2 = "110.0.100.71";
 $username_2 = "root";
 $password_2 = "P@ssw0rdKu!23";
-$dbname_2 = "site-dashboard";
+$dbname_2 = "ipm-dashboard";
 
 $conn_1 = new mysqli($servername_1, $username_1, $password_1, $dbname_1);
 

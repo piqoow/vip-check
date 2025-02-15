@@ -30,7 +30,7 @@ $plateNumber = isset($_GET['plateNumber']) ? $_GET['plateNumber'] : '';
 // SQL query untuk trx_membership
 $sql_1 = "SELECT location_code, transDate, newVehicleType, newVehiclePlateNumber, name, product, newStartDate, newEndDate, membershipStatus, newSmartcardNumber 
         FROM trx_membership 
-        WHERE newVehiclePlateNumber LIKE '%" . $conn_1->real_escape_string($plateNumber) . "%'";
+        WHERE newVehiclePlateNumber LIKE '%" . $conn_1->real_escape_string($plateNumber) . "%' GROUP BY location_code";
 
 // Execute query untuk trx_membership
 $result_1 = $conn_1->query($sql_1);

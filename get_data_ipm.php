@@ -23,7 +23,7 @@ $plateNumber = isset($_GET['plateNumber']) ? $_GET['plateNumber'] : '';
 
 $sql_1 = "SELECT location_code, transDate, newVehicleType, newVehiclePlateNumber, name, product, newStartDate, newEndDate, membershipStatus, newSmartcardNumber 
         FROM trx_membership 
-        WHERE newVehiclePlateNumber LIKE '%" . $conn_1->real_escape_string($plateNumber) . "%' GROUP BY location_code";
+        WHERE newVehiclePlateNumber LIKE '%" . $conn_1->real_escape_string($plateNumber) . "%' group by location_code , SUBSTRING(created_at, 1, 10) order by created_at desc";
 
 $result_1 = $conn_1->query($sql_1);
 
